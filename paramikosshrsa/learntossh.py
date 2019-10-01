@@ -29,4 +29,4 @@ our_commands = ["touch sshworked.txt", "touch create.txt", "touch file3.txt", "l
 
 ## cycle through our commands, and issue them on the far end
 for x in our_commands:
-  print(commandissue(x))
+ print(commandissue(x).decode('utf-8'))
