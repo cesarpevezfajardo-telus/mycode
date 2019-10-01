@@ -20,3 +20,6 @@ print(helmetson)
 print('\n\nPeople in Space: ', helmetson['number'])
 people = helmetson['people']
 print(people)
+
+for people in people:
+    print(people['name'] + " is riding the " + people['craft'])
