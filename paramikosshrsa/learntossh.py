@@ -11,6 +11,11 @@ def commandissue(command_to_issue):
 
 # my commands
 
+print("Servers available: 10.10.2.3, 10.10.2.4, 10.10.2.5")
+ser_ver = input('What is the server IP?: ')
+user_name = input('What is the username?: ')
+pass_word = input('What is the password?: ')
+
 cmd_1 = input('What is the command you want to pass? ')
 
 
@@ -28,7 +33,7 @@ mykey = paramiko.RSAKey.from_private_key_file("/home/student/.ssh/id_rsa")
 sshsession.set_missing_host_key_policy(paramiko.AutoAddPolicy())
 
 ## creds to connect
-sshsession.connect(hostname="10.10.2.3", username="bender", pkey=mykey)
+sshsession.connect(hostname=ser_ver, username=user_name, password=pass_word)
 
 ## a simple list of commands to issue across our connection
 our_commands = [cmd_1]
