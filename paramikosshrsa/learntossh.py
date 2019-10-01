@@ -9,6 +9,12 @@ def commandissue(command_to_issue):
   ssh_stdin, ssh_stdout, ssh_stderr = sshsession.exec_command(command_to_issue)
   return ssh_stdout.read()
 
+# my commands
+
+cmd_1 = input('What is the command you want to pass? ')
+
+
+
 sshsession = paramiko.SSHClient()
 
 ############# IF YOU WANT TO CONNECT USING UN / PW #############
@@ -25,7 +31,7 @@ sshsession.set_missing_host_key_policy(paramiko.AutoAddPolicy())
 sshsession.connect(hostname="10.10.2.3", username="bender", pkey=mykey)
 
 ## a simple list of commands to issue across our connection
-our_commands = ["touch sshworked.txt", "touch create.txt", "touch file3.txt", "ls"]
+our_commands = [cmd_1]
 
 ## cycle through our commands, and issue them on the far end
 for x in our_commands:
