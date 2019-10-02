@@ -18,7 +18,7 @@ def main():
     print(pyyammy)
 
     ## add minecraft to the list of apps
-    pyyammy[0]['apps'].append('minecraft')
+    pyyammy[0]['name'].append('minecraft')
 
     ## Did the python data change?
     print(pyyammy)
