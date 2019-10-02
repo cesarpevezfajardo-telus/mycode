@@ -6,7 +6,7 @@ import yaml
 
 def main():
     ## Open a blob of YAML data
-    yammyfile = open("/home/student/mycode/yamlintro/myYAML.yml", "r")
+    yammyfile = open("/home/student/mycode/yamlintro/galaxyguide.yaml", "r")
 
     ## pull in yaml as python lists and dictionaries
     pyyammy = yaml.load(yammyfile)
@@ -24,7 +24,7 @@ def main():
     print(pyyammy)
 
     ## open a file to dump out to
-    yammyfile2 = open("/home/student/mycode/yamlintro/myYAML.yml.updated", "w")
+    yammyfile2 = open("/home/student/mycode/yamlintro/galaxyguide.yaml.updated", "w")
 
     ## use the yaml library
     ## USAGE: yaml.dump(input data, file like object)
