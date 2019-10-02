@@ -1,0 +1,9 @@
+   Static hostname: napya-331-bchd
+         Icon name: computer-vm
+           Chassis: vm
+        Machine ID: 51415d9ade214a6e937b4ec84314ffe0
+           Boot ID: efef00f9d5d84d198f7114ee71f86b17
+    Virtualization: kvm
+  Operating System: Ubuntu 18.04.3 LTS
+            Kernel: Linux 4.15.0-65-generic
+      Architecture: x86-64
