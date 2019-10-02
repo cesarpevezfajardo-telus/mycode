@@ -6,7 +6,7 @@ import yaml
 
 def main():
     ## Open a blob of YAML data
-    yammyfile = open("/home/student/mycode/yamlintro/myYAML.yml", "r")
+    yammyfile = open("/home/student/mycode/yamlintro/galaxyguide.yaml", "r")
 
     ## convert YAML into python data structures (lists and dictionaries)
     pyyammy = yaml.load(yammyfile)
