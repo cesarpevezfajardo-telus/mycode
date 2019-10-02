@@ -1,25 +1,34 @@
 #!/usr/bin/env python3
+#
 import urllib.request
 import json
 import webbrowser
+from pprint import pprint as pp # part of the standard libray
 
-## Define APOD 
-apodurl = 'https://api.nasa.gov/planetary/apod?'
-mykey = 'api_key=U5y4OsZQ29Zk4XWpCfwCihpc30yjeVZSxdocATRu'    ## your key goes in place of DEMO_KEY
+## define some constants
+NASAAPI = 'https://api.nasa.gov/planetary/apod?' # this is our api to call
+MYKEY = 'api_key=U5y4OsZQ29Zk4XWpCfwCihpc30yjeVZSxdocATRu' ## this is our api key
 
-## Call the webservice
-apodurlobj = urllib.request.urlopen(apodurl + mykey)
+## pretty print json
+def main():
+    """run-time code"""
+    nasaapiobj = urllib.request.urlopen(NASAAPI + MYKEY) # call the webservice
+    nasaread = nasaapiobj.read() # parse the JSON blob returned
+    convertedjson = json.loads(nasaread.decode('utf-8')) # convert json
 
-## read the file-like object
-apodread = apodurlobj.read()
+    # Show converted json
+    print(convertedjson) # show convereted JSON without pprint
+    input('\nThis is converted json. Press ENTER to continue.') # pause for enter
 
-## decode json to python data structure
-decodeapod = json.loads(apodread.decode('utf-8'))
+    # Show Pretty Print json
+    pp(convertedjson) # this is pretty print in action
+    # pprint.pprint(convertedjson) # if you do a simple import pprint, the result is a long usage
+    input('\nThis is pretty printed JSON. Press ENTER to continue.') # pause for ENTER
 
-## display our pythonic data
-print("\n\nConverted python data")
-print(decodeapod)
+    # Print the description of the photo we are about to view
+    print(convertedjson['explanation']) # display the value for the key explanation
+    input('\nPress ENTER to view this photo of the day') # pause for ENTER
 
-## use firefox to open the HTTPS URL
-input('\nPress Enter to open NASA Picture of the Day in Firefox')
-webbrowser.open(decodeapod['url'])
+    webbrowser.open(convertedjson['hdurl']) # open in the webbrowser
+
+main()
